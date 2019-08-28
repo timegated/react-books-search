@@ -12,7 +12,8 @@ import BookList from '../components/BookItems/BookItems'
 
 class Search extends Component {
     state = {
-        books: []
+        books: [],
+        query: ''
     }
 
  searchBooks = (query) => {
@@ -35,6 +36,20 @@ class Search extends Component {
      .catch(err => console.log(err))
  }
 
+ handleSubmit = (event) => {
+     console.log(event)
+    event.preventDefault()
+    this.searchBooks(this.state.query)
+ }
+
+ handleInputChange = (event) => {
+     console.log(event)
+    const {name, value} = event.target
+    this.setState({ [name]: value })
+ }
+
+
+
   render() {
     return (
       <Container>
@@ -48,7 +63,8 @@ class Search extends Component {
                 <h3>Book Search</h3>
               </Card.Header>
               <Card.Body>
-                <Form>
+                <Form
+                onSubmit={(e) => this.handleSubmit(e)}>
                   <Form.Group>
                     <Form.Label>
                       <h5>Search</h5>
@@ -56,6 +72,8 @@ class Search extends Component {
                     <Form.Control
                       type="text"
                       placeholder="Enter a book to search"
+                      name="query"
+                      onChange={this.handleInputChange}
                     />
                     <Form.Control.Feedback type="invalid">
                       Provide a valid search phrase
