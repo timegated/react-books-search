@@ -15,6 +15,26 @@ class Search extends Component {
         books: []
     }
 
+ searchBooks = (query) => {
+    API.searchBooks(query)
+     .then(res => {
+         const bookList = res.data.map(b => {
+             return {
+                 googleId: b.id,
+                 title: b.volumeInfo.title,
+                 subtitle: b.volumeInfo.subtitle || '',
+                 authors: b.volumeInfo.authors,
+                 description: b.volumeInfo.description,
+                 image: b.volumeInfo.imageLinks.thumbnail,
+                 link: b.volumeInfo.infoLink
+             }
+         })
+         this.setState({books: bookList})
+         console.log(bookList)
+     })
+     .catch(err => console.log(err))
+ }
+
   render() {
     return (
       <Container>
