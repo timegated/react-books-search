@@ -8,6 +8,13 @@ const ajax = axios.create({
 })
 
 module.exports = {
+    // findAll: (req, res) => {
+    //     const {query: params} = req
+    //     const result = ajax.get('https://www.googleapis.com/books/v1/volumes', { params })
+    //     .then(data => console.log(data))
+    //     .catch(err => console.log(err))
+        
+    // }
     findAll: async function(req, res) {
         const {query: params} = req
         try {
@@ -29,7 +36,7 @@ module.exports = {
             const dbBooks = await db.Book.find()
 
             const books = apiBooks.filter(apiBook => 
-                dbBooks.every((dbBook) => dbBook.googleId.toString() !== apiBook.id)
+                dbBooks.every(dbBook => dbBook.googleId.toString() !== apiBook.id)
             )
            return res.json(books)
         } catch (e) {

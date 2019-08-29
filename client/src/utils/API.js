@@ -8,7 +8,12 @@ const ajax = axios.create({
 })
 //Basic crud operations go here
 export default {
-    searchBooks: query => {
-        return ajax.get('/api/google', {params: {q: query}})
-    }
+    //Searching API
+    searchBooks: query => ajax.get('/api/google', {params: {q: query}}),
+    
+    //Saving books to database
+    saveBook: data => ajax.post('/api/books', data),
+
+    //Retrieving saved books
+    getSaved: () => ajax.get('/api/books')
 }

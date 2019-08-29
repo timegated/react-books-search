@@ -35,18 +35,25 @@ class Search extends Component {
      })
      .catch(err => console.log(err))
  }
-
+//Search button that sends info to google api
  handleSubmit = (event) => {
      console.log(event)
     event.preventDefault()
     this.searchBooks(this.state.query)
  }
 
+ //Capturing value of input to send to ajax-call
  handleInputChange = (event) => {
-     console.log(event)
+    //  console.log(event)
     const {name, value} = event.target
     this.setState({ [name]: value })
  }
+
+ //Retrieving saved books
+
+bookAction = (book) => {
+  API.saveBook(book).then(() => this.searchBooks(this.state.query)).catch(err => console.log(err))
+}
 
 
 
@@ -106,7 +113,7 @@ class Search extends Component {
                         ) : (
                             <BookList books=
                             {this.state.books}
-                            handleBookAction={this.handleBookAction}
+                            bookAction={this.bookAction}
                             action={this.state.action}
                             />
                         )}
