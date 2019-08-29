@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 const nav = () => {
     return (
         <React.Fragment>
-            <Navbar className="mb-2 p-3" bg="primary" variant="dark" expand="sm">
+            <Navbar className="mb-2 p-3" bg="dark" variant="dark" expand="sm">
             <Link className="navbar-brand" to="/">
                 Book Search
             </Link>

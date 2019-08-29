@@ -63,12 +63,12 @@ bookAction = (book) => {
       <Container>
         <Row>
           <Col md={12}>
-            <h1>Header Component</h1>
+            <h1 className="text-center">Google Books Search</h1>
           </Col>
           <Col md={12}>
             <Card className="mt-4 shadow">
-              <Card.Header className="border-bottom-0 bg-success text-white">
-                <h3>Book Search</h3>
+              <Card.Header className="border-bottom-0 bg-dark text-white">
+                <h3>Search</h3>
               </Card.Header>
               <Card.Body>
                 <Form
