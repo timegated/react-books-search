@@ -39,6 +39,7 @@ class Search extends Component {
  handleSubmit = (event) => {
      console.log(event)
     event.preventDefault()
+    this.setState({validated: true})
     this.searchBooks(this.state.query)
  }
 

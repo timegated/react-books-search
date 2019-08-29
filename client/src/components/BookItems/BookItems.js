@@ -26,13 +26,13 @@ const bookList = props => {
                 >
                   View
                 </Button>
-                {props.action === "save" && (
+                
                 <Button 
                 onClick={() => props.bookAction(book)}
                 >
                     Save
                 </Button>
-                )}
+               
 
                 <Button>Delete</Button>
               </div>
