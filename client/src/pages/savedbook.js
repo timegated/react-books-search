@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import BookItems from '../components/BookItems'
+import BookItems from '../components/BookItems/BookItems'
 import API from '../utils/API';
 
 class Saved extends Component {

@@ -10,7 +10,7 @@ const bookList = props => {
       {props.books.map(book => (
         <ListGroup.Item as="li">
           <Row className="book-list">
-            <Col md={8}>
+            <Col md={8} className="mt-4">
               <h3>{book.title}</h3>
               {book.subtitle !== undefined && book.subtitle.length > 0 && (
                 <h5>{book.subtitle}</h5>

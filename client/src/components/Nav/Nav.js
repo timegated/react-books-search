@@ -5,12 +5,20 @@ import Nav from 'react-bootstrap/Nav';
 
 const nav = () => {
     return (
-        <Navbar className="mb-2 p-3" bg="primary" variant="dark" expand="sm">
+        <React.Fragment>
+            <Navbar className="mb-2 p-3" bg="primary" variant="dark" expand="sm">
             <Link className="navbar-brand" to="/">
                 Book Search
             </Link>
+            <Nav>
+            <NavLink exact to="/" className="nav-link">Search</NavLink>
+            <NavLink exact to="/saved" className="nav-link">Saved</NavLink> 
+            </Nav>
+           
         </Navbar>
+        </React.Fragment>
+       
     )
 }
 
-export default Nav
+export default nav;

@@ -104,10 +104,9 @@ bookAction = (book) => {
         </Row>
         <Row>
             <Col md={12}>
+                <h3 className="text-center">Results</h3>
                 <Card className="mt-4 shadow">
-                    <Card.Header className="border-bottom-0 bg-success text-white">
-                        <h3>Results</h3>
-                    </Card.Header>
+                   
                     <Card.Body>
                         {!this.state.books.length ? (
                             <h2>Search for a book to begin</h2>
