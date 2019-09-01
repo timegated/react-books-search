@@ -10,5 +10,11 @@ module.exports = {
         db.Book.create(req.body)
         .then(result => res.json(result))
         .catch(err => console.log(err))
+    },
+    delete: (req, res) => {
+        db.Book.findById(req.params.id)
+        .then(book => book.remove())
+        .catch(result => res.json(result))
+        .catch(err => console.log(err))
     }
 }

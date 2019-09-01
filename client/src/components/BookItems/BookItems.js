@@ -34,7 +34,7 @@ const bookList = props => {
                 </Button>
                
 
-                <Button>Delete</Button>
+                <Button onClick={() => props.deleteBook(book._id)}>Delete</Button>
               </div>
             </Col>
           </Row>

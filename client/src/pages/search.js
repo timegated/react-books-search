@@ -13,6 +13,7 @@ import BookList from '../components/BookItems/BookItems'
 class Search extends Component {
     state = {
         books: [],
+        action: 'save',
         query: ''
     }
 
@@ -37,7 +38,7 @@ class Search extends Component {
  }
 //Search button that sends info to google api
  handleSubmit = (event) => {
-     console.log(event)
+    //  console.log(event)
     event.preventDefault()
     this.setState({validated: true})
     this.searchBooks(this.state.query)

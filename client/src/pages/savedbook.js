@@ -11,6 +11,7 @@ class Saved extends Component {
         super(props) 
             this.state = {
                 pageTag: 'Saved Books',
+                action: 'delete',
                 books: []
             }
         
@@ -21,13 +22,18 @@ class Saved extends Component {
     
     loadBooks = () => {
         API.getSaved()
-         .then(res => {
+          .then(res => {
              const bookItems = res.data;
 
              this.setState({ books: bookItems })
          })
     }
-
+    deleteBookHandler = (id) => {
+        console.log(id)
+        API.deleteBook(id)
+          .then(() => this.loadBooks())
+          .catch(err => console.log(err))
+    }
 
     render () {
         return (
@@ -49,7 +55,7 @@ class Saved extends Component {
                             ) : (
                                 <BookItems
                                 books={this.state.books}
-                                handleBookAction={this.handleBookAction}
+                                deleteBook={this.deleteBookHandler}
                                 action={this.state.action}
                                 />
                             )}

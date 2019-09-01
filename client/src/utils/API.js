@@ -15,5 +15,8 @@ export default {
     saveBook: data => ajax.post('/api/books', data),
 
     //Retrieving saved books
-    getSaved: () => ajax.get('/api/books')
+    getSaved: () => ajax.get('/api/books'),
+
+    //Delete book method
+    // deleteBooks: () => ajax.delete(`/api/books/${id}`)
 }
