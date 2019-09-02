@@ -12,8 +12,8 @@ const bookImg = {
 };
 
 const card = {
-  width: "250px",
-  height: "250px"
+  width: "auto",
+  height: "auto"
 };
 
 const bookList = props => {
@@ -35,22 +35,22 @@ const bookList = props => {
                 View
               </Card.Link>
               {props.action === "save" && (
-                <Button className="ml-4" onClick={() => props.bookAction(book)}>
+                <Button className="ml-2" onClick={() => props.bookAction(book)}>
                   Save
                 </Button>
               )}
               {props.action === "delete" && (
                 <Button
-                  className="ml-4"
-                  onClick={() => props.bookAction(book._id)}
+                  className="ml-2"
+                  onClick={() => props.deleteBook(book._id)}
                 >
                   Delete
                 </Button>
               )}
-             
+              <Description className="ml-2" description={book.description} />
             </Card.Body>
           </Card> 
-          <Description description={book.description} />
+         
         </ListGroup.Item>
       ))}
 
