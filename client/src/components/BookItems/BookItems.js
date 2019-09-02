@@ -1,63 +1,61 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
+import ListGroup from "react-bootstrap/ListGroup";
+import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
+import Description from "../Description/Description";
+
+const bookImg = {
+  width: "150px",
+  height: "150px",
+  margin: "0 auto"
+};
+
+const card = {
+  width: "250px",
+  height: "250px"
+};
 
 const bookList = props => {
   return (
-    <ListGroup>
+    <Row>
       {props.books.map(book => (
         <ListGroup.Item as="li">
-          <Row className="book-list">
-            <Col md={8} className="mt-4">
-              <h3>{book.title}</h3>
-              {book.subtitle !== undefined && book.subtitle.length > 0 && (
-                <h5>{book.subtitle}</h5>
-              )}
-            </Col>
-            <Col md={4}>
-              <div>
-                <Button
-                  href={book.link}
-                  rel="noopener noreferrer"
-                  as="a"
-                  target="_blank"
-                >
-                  View
-                </Button>
-                
-                <Button 
-                onClick={() => props.bookAction(book)}
-                >
-                    Save
-                </Button>
-               
+          <Card style={card}>
+            <Card.Img src={book.image} style={bookImg} />
+            <Card.Body>
+              <Card.Title>{book.title}</Card.Title>
 
-                <Button onClick={() => props.deleteBook(book._id)}>Delete</Button>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={6}>
-              <p>Written by: {book.authors.join(", ")}</p>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} sm={4} md={2}>
-              <img
-                src={book.image}
-                alt={book.title}
-                className="img-thumbnail img-fluid w-100"
-              />
-            </Col>
-            <Col xs={12} sm={8} md={10}>
-              <p>{book.description}</p>
-            </Col>
-          </Row>
+              <Card.Link
+                className="btn bg-dark text-white"
+                href={book.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View
+              </Card.Link>
+              {props.action === "save" && (
+                <Button className="ml-4" onClick={() => props.bookAction(book)}>
+                  Save
+                </Button>
+              )}
+              {props.action === "delete" && (
+                <Button
+                  className="ml-4"
+                  onClick={() => props.bookAction(book._id)}
+                >
+                  Delete
+                </Button>
+              )}
+             
+            </Card.Body>
+          </Card> 
+          <Description description={book.description} />
         </ListGroup.Item>
       ))}
-    </ListGroup>
+
+     
+    </Row>
   );
 };
 

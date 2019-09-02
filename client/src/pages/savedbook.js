@@ -30,7 +30,7 @@ class Saved extends Component {
     }
     deleteBookHandler = (id) => {
         console.log(id)
-        API.deleteBook(id)
+        API.deleteBooks(id)
           .then(() => this.loadBooks())
           .catch(err => console.log(err))
     }

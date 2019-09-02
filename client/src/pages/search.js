@@ -112,8 +112,9 @@ bookAction = (book) => {
                         {!this.state.books.length ? (
                             <h2>Search for a book to begin</h2>
                         ) : (
-                            <BookList books=
-                            {this.state.books}
+                            <BookList 
+                          
+                            books={this.state.books}
                             bookAction={this.bookAction}
                             action={this.state.action}
                             />
