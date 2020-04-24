@@ -14,7 +14,6 @@ const nav = () => {
             <NavLink exact to="/" className="nav-link">Search</NavLink>
             <NavLink exact to="/saved" className="nav-link">Saved</NavLink> 
             </Nav>
-           
         </Navbar>
         </React.Fragment>
        
