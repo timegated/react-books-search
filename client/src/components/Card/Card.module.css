@@ -1,0 +1,22 @@
+.card {
+ flex: 1 0 30%;
+ align-self: center;
+}
+
+.cardTitle {
+  text-align: center;
+  
+}
+
+.cardContent {
+  text-align: center;
+  width: 100%;
+}
+
+.cardImage {
+
+}
+
+.cardButtons {
+  
+}

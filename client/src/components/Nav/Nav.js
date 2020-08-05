@@ -1,22 +1,21 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-
+import { Link } from 'react-router-dom';
+import style from './Nav.module.css';
 const nav = () => {
     return (
-        <React.Fragment>
-            <Navbar className="mb-2 p-3" bg="dark" variant="dark" expand="sm">
-            <Link className="navbar-brand" to="/">
-                Book Search
-            </Link>
-            <Nav>
-            <NavLink exact to="/" className="nav-link">Search</NavLink>
-            <NavLink exact to="/saved" className="nav-link">Saved</NavLink> 
-            </Nav>
-        </Navbar>
-        </React.Fragment>
-       
+        <header className={style.headerContent}>
+            <nav className={style.navBar}>
+                <ul className={style.navList}>
+                    <li className={style.navItem}>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className={style.navItem}>
+                        <Link to="/saved">Saved Books</Link>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
     )
 }
 

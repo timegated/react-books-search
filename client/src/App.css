@@ -20,6 +20,12 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #EFEFEF;
+}
+
+.main-content {
+  background: #efefef;
+  padding: 3em;
+  margin-top: 3.5em;
 }
 

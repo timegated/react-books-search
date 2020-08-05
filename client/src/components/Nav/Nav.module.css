@@ -1,0 +1,39 @@
+.headerContent {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2c2c2c;
+}
+
+.navBar {
+  background: #2c2c2c;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navItem {
+  padding: 0.3em;
+}
+
+.navItem a {
+  color: #efefef;
+  font-size: 24px;
+  margin: 1em;
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.navItem a:hover {
+  color: #2c2c2c;
+  background: #efefef;
+  transition: all 0.3s ease;
+}

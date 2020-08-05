@@ -1,0 +1,57 @@
+.formGroup {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ border: 1px solid black;
+ border-radius: 3em;
+ box-shadow: 3px 3px 3px black;
+ padding: 3em;
+}
+
+.inputGroup:first-child {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.inputGroup:nth-child(2) {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.inputGroup label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  border-radius: 8px;
+  border: transparent;
+  background: #2c2c2c;
+  color: #efefef;
+  font-size: 24px;
+}
+
+input[type="text"]:focus {
+  border: transparent;
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 3px black;
+  font-weight: bold;
+  padding: 0.5em;
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.submitButton:hover {
+  background: #0080FF;
+  transition: all 0.2s ease;
+}
